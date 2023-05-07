@@ -26,5 +26,14 @@ public class InspectionItem {
 
     private String item;
 
-    private String value;
+    private Values value;
+
+    public InspectionItem(String item, Values value) {
+        this.item = item;
+        this.value = value;
+    }
+
+    public static InspectionItem toEntity(InspectionItemDto inspectionItem) {
+        return new InspectionItem(inspectionItem.getItem(), inspectionItem.getValue());
+    }
 }

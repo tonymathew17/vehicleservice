@@ -25,7 +25,7 @@ public class TasksController {
     @GetMapping("{id}")
     public ResponseEntity<Task> findOne(@PathVariable("id") UUID id) {
         Task task = this.tasksService.findOne(id);
-        return new ResponseEntity<>(task, HttpStatus.CREATED);
+        return new ResponseEntity<>(task, HttpStatus.OK);
     }
 
     @GetMapping
